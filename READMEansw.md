@@ -103,7 +103,7 @@ node_filesystem_avail_bytes{device="/dev/sda2", fstype="ext4", instance="nodeexp
 
 Скриншот итоговой Dashboard:
 
-![Screenshot1](<https://github.com/megasts/10-monitoring-03-grafana/blob/main/img/Screenshot from 2025-01-11 20-18-49.png>)
+![Screenshot1](<https://github.com/megasts/10-monitoring-03-grafana/blob/main/img/Screenshot from 2025-01-11 20-53-50.png>)
 
 ---
 
