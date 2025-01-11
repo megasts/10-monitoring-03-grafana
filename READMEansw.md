@@ -26,6 +26,15 @@
 1. Подключите поднятый вами prometheus, как источник данных.
 1. Решение домашнего задания — скриншот веб-интерфейса grafana со списком подключенных Datasource.
 
+---
+### Ответ
+
+Скриншот веб-интерфейса grafana со списком подключенных Datasource:
+
+![Screenshot1](<https://github.com/megasts/10-monitoring-03-grafana/blob/main/img/Screenshot from 2025-01-11 16-41-17.png>)
+
+---
+
 ## Задание 2
 
 Изучите самостоятельно ресурсы:
