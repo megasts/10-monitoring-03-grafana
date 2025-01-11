@@ -52,6 +52,47 @@
 
 Для решения этого задания приведите promql-запросы для выдачи этих метрик, а также скриншот получившейся Dashboard.
 
+---
+### Ответ
+
+promql-запросы:
+
+- утилизация CPU для nodeexporter (в процентах, 100-idle):
+```
+100-(avg by (instance) (rate(node_cpu_seconds_total{mode="idle",job="nodeexporter"}[1m])))*100
+```
+
+- CPULA 1/5/15:
+
+```
+node_load1{instance="nodeexporter:9100", job="nodeexporter"}
+node_load5{instance="nodeexporter:9100", job="nodeexporter"}
+node_load15{instance="nodeexporter:9100", job="nodeexporter"}
+```
+
+- количество свободной оперативной памяти в %:
+
+```
+node_memory_MemFree_bytes{instance="nodeexporter:9100", job="nodeexporter"} / node_memory_MemTotal_bytes{instance="nodeexporter:9100", job="nodeexporter"} * 100
+```
+
+- количество свободной оперативной памяти всего:
+
+```
+node_memory_MemFree_bytes{instance="nodeexporter:9100", job="nodeexporter"}
+```
+- количество места на файловой системе:
+
+```
+node_filesystem_avail_bytes{device="/dev/sda2", fstype="ext4", instance="nodeexporter:9100", job="nodeexporter", mountpoint="/"}
+```
+
+скриншот получившейся Dashboard:
+
+![Screenshot1](<https://github.com/megasts/10-monitoring-03-grafana/blob/main/img/Screenshot from 2025-01-11 20-18-49.png>)
+
+---
+
 ## Задание 3
 
 1. Создайте для каждой Dashboard подходящее правило alert — можно обратиться к первой лекции в блоке «Мониторинг».
